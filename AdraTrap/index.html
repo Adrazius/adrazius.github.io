@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>AdraTrap</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css"/>
+    <link rel="icon" href="png/favicon.ico"/>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+    <script src="engine/hand.js"></script>
+    <script src="engine/babylon.js"></script>
+    <script src="game/game.js"></script>
+    <script src="game/scene.js"></script>
+    <script src="game/player.js"></script>
+    <script src="game/analyser.js"></script>
+</head>
+<body oncontextmenu="return false;">
+    <div id="splashScreen">
+        <form action="#">
+            <p id="warningMessage">Attention!</p>
+            <p class="aligned">Ce jeu peut provoquer des crises pour les personnes <a style="color: whitesmoke;" href="https://en.wikipedia.org/wiki/Photosensitive_epilepsy" target="_blank">épilepitiques</a></p>
+            <p class="aligned">Enjoy this game :3</p>
+            <p class="aligned">
+                <input type="checkbox" id="riskCheckbox" onclick="enablePlay();"/>
+                <label style="color: whitesmoke;" for="riskCheckbox">OK, je m'en fous</label>
+            </p>
+            <p><a class="waves-effect waves-light btn-large disabled" id="riskButton" onclick="continueToGame();">Continuer vers le jeu</a></p>
+        </form>
+    </div>
+    <div id="title" class="UI">AdraTrap</div>
+    <div id="webglLogo" class="UI"><a href="https://www.khronos.org/webgl/" target="_blank"><img src="png/webglLogo.png" width="125" height="50"/></a></div>
+    <div id="credit" class="UI">Utilisez un casque pour une meilleure expérience<br/>Crée par Adrazius<br/><br/><br/><a href="http://www.babylonjs.com/" target="_blank"><img src="png/babylonLogo.svg" height="50" width="100"></a></div>
+    <div id="soundcloudLogo" class="UI"><a href="https://soundcloud.com/" target="_blank"><img src="png/soundcloudLogo.png"/></a></div>
+    <div id="fps" class="UI"></div>
+    <div id="score"></div>
+    <div id="howtoplay">
+        <p>Utilisez les touches ZQSD, WASD ou les touches des fléches pour déplacer la boîte</p>
+        <p>Utilisez la barre d'espace pour Jump</p>
+        <p>Ne pas entrer en collision avec les fucking cônes</p>
+    </div>
+    <div class="menu" id="leaderboardMenu">
+        <span id="totalScore">Score Total <br/></span>
+        <a class="waves-effect waves-light btn-large" id="Retry" onclick="Retry();">Réessayer</a>
+        <a class="waves-effect waves-light btn-large" id="Menu" onclick="Menu();">Menu</a>
+        <a class="waves-effect waves-light btn-large disabled" id="Leaderboards" onclick="LeaderBoards();">Classements</a>
+    </div>
+    <div class="UI menu" id="mainMenu">
+        <a class="waves-effect waves-light btn-large" id="play" onclick="startPlaying();">Jouer</a>
+        <a class="waves-effect waves-light btn-large" id="fullscreen" onclick="toggleFullScreen();">PleinEcran</a>
+        <div class="input-field col s12" id="difficultyDiv">
+            <select id="difficulty">
+                <option value="1">Easy</option>
+                <option value="2" selected>Medium</option>
+                <option value="3">Hard (pause)</option>
+            </select>
+            <label for="difficulty">Choisissez la difficulté</label>
+        </div>
+        <div class="input-field col s12" id="musicDiv">
+            <select id="music">
+            	<option value="1" selected>Martin Garrix & MOTi - Virus</option>
+                <option value="2">Black Coast - TRNDSTTR (Lucian Remix) feat. M.Maggie</option>
+                <option value="3">Falling - Opia</option>
+                <option value="4">Enigma - Jordan Comolli</option>
+                <option value="5">Fire - TheUnder</option>
+                <option value="6">I am the King - James Meyers</option>
+                <option value="7">Drop you like - Delax</option>
+                <option value="8">Atlantic Haze - Osiris feat. Anuka</option>
+                <option value="9">Sex Whales & Fraxo - Dead to me feat. Lox Chatterbox</option>
+                <option value="10">Juanna - Intoxicated (Rothmann Remix)</option>
+                <option value="11">Tim Legend - Holy Water</option>
+                <option value="12">KRNE - Propane</option>
+                <option value="13">Sammie Beats - Sativa</option>
+                <option value="14">Sevnty - Bring it back</option>
+                <option value="15">Biometrix - Hush feat. Charli Brix</option>
+                <option value="16">Marshvll - The Vibe VIP. feat. Yung Fusion</option>
+                <option value="17">Wizard - Settle Down</option>
+                <option value="18">Hucci - Phoenix</option>
+                <option value="19">700K Subscriber Mix by Y2K</option>
+                <option value="20">Zephyr - Soul Trumpet feat. Patricia Edwards</option>
+            </select>
+            <label for="music">Choisir la piste audio</label>
+        </div>
+    </div>
+    <canvas id="renderCanvas" class="UI game"></canvas>
+</body>
+<script src="js/jquery-2.2.3.min.js"></script>
+<script src="materialize/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+</html>

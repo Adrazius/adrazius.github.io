@@ -1,0 +1,202 @@
+﻿@font-face{
+    font-family: roboto;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    touch-action: none;
+
+    font-family: roboto;
+    color: white;
+    background-color: #61005D;
+}
+
+#renderCanvas{
+    width: 100%;
+    height: 100%;
+}
+
+#fps{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.7;
+
+    width: 200px;
+    height: 400px;
+
+    text-align: center;
+}
+
+#play, #soundcloud, #google, #github, #fullscreen, #Retry, #Menu, #Leaderboards{
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+#title{
+    position: absolute;
+    margin: 50px auto;
+    width: 100%;
+    font-size: 64pt;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#credit{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: 12pt;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 2.0;
+}
+
+#score{
+    position: absolute;
+    margin: 30px auto;
+    width: 100%;
+    height: 50px;
+    font-size: 32pt;
+    color: whitesmoke;
+    text-align: center;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+}
+
+#totalScore{
+    font-size: 18pt;
+}
+
+#leaderboardMenu{
+    opacity: 0;
+
+    width: 200px;
+    height: 400px;
+
+    pointer-events: none;
+}
+
+#webglNoSupport{
+    width: 100%;
+    height: 100px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    font-size: 24pt;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#helper{
+    font-size: 12pt;
+}
+
+#soundcloudLogo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#webglLogo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#splashScreen{
+    visibility: visible;
+    text-align: center;
+}
+
+#warningMessage{
+    font-size: 32pt;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.UI{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#riskButton{
+    margin-top: 30px;
+    width: 100%;
+}
+
+form{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 800px;
+    height: 300px;
+
+    text-align: center;
+}
+
+.aligned{
+    text-align: center;
+}
+
+#difficultyDiv, #musicDiv{
+    margin-top: 50px;
+}
+
+#howtoplay{
+    position: absolute;
+    text-align: center;
+    line-height: 2.0;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 18pt;
+
+    width: 100%;
+    height: 50px;
+
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    margin: auto;
+}
+
+#headphones{
+    font-size: 18pt;
+}
