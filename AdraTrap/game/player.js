@@ -40,10 +40,10 @@ function controlPlayer() {
         frame: 0,
         value: player.position.y
     }, {
-        frame: 15,
-        value: player.position.y + 5
+        frame: 20,
+        value: player.position.y + 10
     }, {
-        frame: 30,
+        frame: 40,
         value: player.position.y
     });
 
@@ -59,7 +59,7 @@ function controlPlayer() {
         frame: 0,
         value: player.rotation.x
     }, {
-        frame: 30,
+        frame: 40,
         value: player.position.x + Math.PI
     });
 
